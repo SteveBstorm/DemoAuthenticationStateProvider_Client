@@ -1,4 +1,15 @@
 ﻿@page "/"
+@using System.Security.Claims
+
+<AuthorizeView>
+    <Authorized>
+        @*<label class="text-success">L'utilisateur courant est autorisé</label>*@
+        <label class="text-success">L'utilisateur : @context.User.FindFirst(ClaimTypes.Name).Value est autorisé</label>
+    </Authorized>
+    <NotAuthorized>
+        <label class="text-danger">L'utilisateur courant n'est pas autorisé</label>
+    </NotAuthorized>
+</AuthorizeView>
 
 <PageTitle>Index</PageTitle>
 

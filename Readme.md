@@ -11,7 +11,7 @@ Demo AuthenticationStateProvider ClientSide
 	 	```
 	ClaimsIdentity anonymousUser = new ClaimsIdentity();
     return await Task.FromResult(new AuthenticationState(new ClaimsPrincipal(anonymousUser)));
-´´´
+```
 3) Program.cs =>
 	
 builder.Services.AddAuthorizationCore();
@@ -31,7 +31,7 @@ builder.Services.AddScoped<AuthenticationStateProvider, TestAuthStateProvider>()
             </AuthorizeRouteView>
 
         </Found>
-´´´
+```
 5) Ajouter @using Microsoft.AspNetCore.Components.Authorization
 	dans _Imports.blazor
 

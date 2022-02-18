@@ -18,8 +18,6 @@ namespace DemoAuthenticationStateProvider_Client.Pages.Auth
         [Inject]
         public IJSRuntime _js { get; set; }
         
-        //[CascadingParameter]
-        //private TestAuthStateProvider _loginTask { get; set; }
 
         [Inject]
         public IServiceProvider service { get; set; }
@@ -45,8 +43,6 @@ namespace DemoAuthenticationStateProvider_Client.Pages.Auth
 
                 await _js.InvokeVoidAsync("localStorage.setItem","token", jsonResponse);
 
-                await _js.InvokeVoidAsync("console.log", service);
-                //Debug.WriteLine(service);
                 ((TestAuthStateProvider)service.GetService<AuthenticationStateProvider>()).NotifyUserChanged();
 
 

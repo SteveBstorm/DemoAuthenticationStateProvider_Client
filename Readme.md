@@ -8,7 +8,7 @@ Demo AuthenticationStateProvider ClientSide
 	//3états possible : Authorized / Non-Authorized / Authorizing
 	
 	=> override GetAuthenticationStateAsync()
-	 	```
+```
 	ClaimsIdentity anonymousUser = new ClaimsIdentity();
     return await Task.FromResult(new AuthenticationState(new ClaimsPrincipal(anonymousUser)));
 ```
